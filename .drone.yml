@@ -37,15 +37,6 @@ steps:
       ssh_key:
         from_secret: github_ssh_key
 
-  - name: version
-    image: etsinfra/drone-bump-version
-    settings:
-      changelog_path: CHANGELOG.md
-      github_token:
-        from_secret: github_token
-      user_name: drone-gh
-      user_email: drone-gh@agrrh.com
-
 trigger:
   event:
     - push
