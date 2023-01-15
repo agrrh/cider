@@ -71,11 +71,10 @@ steps:
       password:
         from_secret: docker_password
       repo: agrrh/cider
-      # tags:
-      #   - ${DRONE_COMMIT_BRANCH}
-      #   - ${DRONE_COMMIT_TAG}  # is valid var?
-      #   - latest
-      auto_tag: true
+      tags:
+        - latest
+        - ${DRONE_COMMIT_BRANCH}
+        - ${DRONE_TAG}
 
 trigger:
   event:
