@@ -51,6 +51,7 @@ trigger:
     - push
   ref:
     - refs/heads/master
+    - refs/tags/**
 
 ---
 
@@ -60,6 +61,7 @@ name: publish
 
 depends_on:
   - lint
+  - release
 
 steps:
   - name: docker-hub
@@ -80,4 +82,4 @@ trigger:
     - push
   ref:
     - refs/heads/master
-    - refs/tags/v*
+    - refs/tags/**
