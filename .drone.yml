@@ -5,7 +5,79 @@ type: docker
 name: lint
 
 steps:
-  - name: lint
+  - name: hadolint
     image: hadolint/hadolint:v2.12.0-alpine
     commands:
-      - hadolint Dockerfile
+      - hadolint --failure-threshold warning Dockerfile
+
+---
+
+kind: pipeline
+type: docker
+name: release
+
+steps:
+  - name: generate-changelog
+    image: naorlivne/drone-github-changelog-generator
+    settings:
+      github_user: agrrh
+      github_project: cider
+      output_path: CHANGELOG.md
+
+  - name: changelog
+    image: appleboy/drone-git-push
+    settings:
+      branch: master
+      remote: git@github.com:agrrh/cider.git
+      # remote_name: origin
+      commit: true
+      commit_message: "[skip ci] changelog bump"
+      author_name: drone-gh
+      author_email: drone-gh@agrrh.com
+      ssh_key:
+        from_secret: github_ssh_key
+
+  - name: version
+    image: etsinfra/drone-bump-version
+    settings:
+      changelog_path: CHANGELOG.md
+      github_token:
+        from_secret: github_token
+      user_name: drone-gh
+      user_email: drone-gh@agrrh.com
+
+trigger:
+  event:
+    - push
+  ref:
+    - refs/heads/master
+
+---
+
+kind: pipeline
+type: docker
+name: publish
+
+depends_on:
+  - lint
+
+steps:
+  - name: docker-hub
+    image: plugins/docker
+    settings:
+      username: agrrh
+      password:
+        from_secret: docker_password
+      repo: agrrh/cider
+      # tags:
+      #   - ${DRONE_COMMIT_BRANCH}
+      #   - ${DRONE_COMMIT_TAG}  # is valid var?
+      #   - latest
+      auto_tag: true
+
+trigger:
+  event:
+    - push
+  ref:
+    - refs/heads/master
+    - refs/tags/v*

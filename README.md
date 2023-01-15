@@ -1,5 +1,7 @@
 # cider
 
+[![Build Status](https://drone-gh.agrrh.com/api/badges/agrrh/cider/status.svg)](https://drone-gh.agrrh.com/agrrh/cider)
+
 Cider is a simple CI runner image built to use inside [Drone CI](https://www.drone.io/) jobs for my pet projects.
 
 This image contains some useful utilities:

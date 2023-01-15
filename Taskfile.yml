@@ -1,0 +1,12 @@
+---
+
+version: '3'
+
+tasks:
+  build:
+    cmds:
+      - docker build . -t agrrh/cider
+
+  push:
+    cmds:
+      - docker push agrrh/cider

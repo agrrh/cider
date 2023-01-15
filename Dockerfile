@@ -1,5 +1,9 @@
 FROM alpine:3.17
 
+RUN apk add --no-cache  \
+  gcc=~12.2 \
+  musl-dev=~1.2
+
 RUN apk add --no-cache \
   editorconfig-checker=~2.6 \
   go-task=~3.18 \
