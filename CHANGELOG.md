@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.2.0](https://github.com/agrrh/cider/tree/0.2.0) (2023-01-15)
+
+[Full Changelog](https://github.com/agrrh/cider/compare/0.1.0...0.2.0)
+
 ## [0.1.0](https://github.com/agrrh/cider/tree/0.1.0) (2023-01-15)
 
 [Full Changelog](https://github.com/agrrh/cider/compare/9e8a33be18d3f67edc824e1758b2058069121a62...0.1.0)
