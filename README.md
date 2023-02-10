@@ -22,5 +22,3 @@ First it was named as "CI General Purpose image", abbreviated as "cigp".
 By accident, "cigp" visually refers to word "сидр".
 
 "Сидр" (rus.) - cider, an alcoholic beverage made from the fermented juice of apples.
-
-So, cider.
