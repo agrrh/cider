@@ -7,6 +7,7 @@ RUN apk add --no-cache  \
 RUN apk add --no-cache \
   editorconfig-checker=~2.6 \
   go-task=~3.18 \
+  pigz=~2.7 \
   py3-pip=~22.3
 
 RUN pip install --no-cache-dir \
