@@ -15,6 +15,11 @@ This image contains some useful utilities:
   - [flake8](https://github.com/pycqa/flake8) linter
   - [black](https://github.com/psf/black) formatter
 
+- **Backups**
+  - [pigz](https://zlib.net/pigz/) - parallel gzip
+  - [restic](https://restic.net/) - backup tool
+  - [rclone](https://rclone.org/) - cloud sync tool
+
 # Naming
 
 First it was named as "CI General Purpose image", abbreviated as "cigp".
