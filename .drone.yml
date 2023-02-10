@@ -1,7 +1,7 @@
 ---
 
 kind: pipeline
-type: docker
+type: kubernetes
 name: lint
 
 steps:
@@ -13,7 +13,7 @@ steps:
 ---
 
 kind: pipeline
-type: docker
+type: kubernetes
 name: release
 
 steps:
@@ -48,7 +48,7 @@ trigger:
 ---
 
 kind: pipeline
-type: docker
+type: kubernetes
 name: publish
 
 depends_on:
