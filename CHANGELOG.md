@@ -4,10 +4,6 @@
 
 [Full Changelog](https://github.com/agrrh/cider/compare/0.4.0...0.5.0)
 
-**Merged pull requests:**
-
-- feat: add curl and coreutils [\#1](https://github.com/agrrh/cider/pull/1) ([agrrh](https://github.com/agrrh))
-
 ## [0.4.0](https://github.com/agrrh/cider/tree/0.4.0) (2023-02-10)
 
 [Full Changelog](https://github.com/agrrh/cider/compare/0.3.0...0.4.0)
