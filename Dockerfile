@@ -5,6 +5,7 @@ RUN apk add --no-cache  \
   musl-dev=~1.2
 
 RUN apk add --no-cache \
+  coreutils=~9.1 \
   curl=~8.5 \
   editorconfig-checker=~2.6 \
   go-task=~3.18 \
