@@ -5,6 +5,7 @@ RUN apk add --no-cache  \
   musl-dev=~1.2
 
 RUN apk add --no-cache \
+  aws-cli=~1.25 \
   coreutils=~9.1 \
   curl=~8.9 \
   editorconfig-checker=~2.6 \
